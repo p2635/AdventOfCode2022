@@ -110,3 +110,4 @@ Find the top three Elves carrying the most Calories. How many Calories are those
 - https://www.adamsmith.haus/python/answers/how-to-convert-each-line-in-a-text-file-into-a-list-in-python
 - https://stackoverflow.com/questions/16632124/how-to-emulate-sum-using-a-list-comprehension
 - https://www.w3schools.com/python/python_lists_methods.asp
+- https://www.w3schools.com/python/python_lists_sort.asp
