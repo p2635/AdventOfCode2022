@@ -7,7 +7,7 @@ This is my repo for solving the [2022 Advent of Code challenges](https://advento
 
 Note: I am a python n00b, so this will make my brain work.
 
-- [ ] Day 1: Calorie Counting 🍔
+- [x] Day 1: Calorie Counting 🍔
 - [ ] Day 2
 - [ ] Day 3
 - [ ] Day 4
