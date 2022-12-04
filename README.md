@@ -1,7 +1,8 @@
-This is my repo for solving the 2022 Advent of Code challenges.
-https://adventofcode.com/2022/
+![image](https://user-images.githubusercontent.com/4522927/205472301-8934640a-2807-4af2-b3a7-9f442969d427.png)
 
-Start Date: 03 December 2022
-End Date:
+This is my repo for solving the [2022 Advent of Code challenges](https://adventofcode.com/2022/).
+
+- Start Date: 03 December 2022
+- End Date: I don't know if I can make it 'til the end!
 
 Note: I am a python n00b, so this will make my brain work.
