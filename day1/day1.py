@@ -7,7 +7,7 @@ inventory = []
 
 # Let's open the file
 with open("day1/puzzle_input.txt", encoding="utf-8", mode="r") as foods:
-    
+
     # Elves line up, let's take down your details!
     currentElf = []
 
@@ -36,4 +36,5 @@ for elf in inventory:
 # Finding the one who owns the most calorie-dense foods
 mostCals = max(totalcals)
 winningElf = totalcals.index(mostCals)
-print(f"The winner of the competition holds {mostCals} calories, held by elf number {winningElf}!!!")
+print(f"The winner of the competition holds {mostCals} \
+    calories, held by elf number {winningElf}!!!")
