@@ -42,7 +42,14 @@ Now that you're correctly decrypting the ultra top secret strategy guide, you wo
 
 Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?
 
+# Part 2 Notes
+
+- Given a letter (XYZ), I need to determine the outcome (Win/Lose/Draw).
+- Given the opponent's move and the outcome, I need to determine the right move to make.
+- Total score calculation remains the same.
+
 # Problems
 
 - `__init__.py` is required if you want to import modules for python
 - I wanted to implement rock, paper, scissors as a dict lookup. But my coding skills are too weak, I got too frustrated. Best to start simple and improve later.
+- A lot of frustration wanting to code beautifully, including doing unit tests. In the end, I focused more on solving the problem rather than implementing clean code.

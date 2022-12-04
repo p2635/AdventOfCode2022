@@ -1,28 +1,60 @@
-"""Module to solve day 2 of Advent of Code."""
+"""Module to solve day 2 of Advent of Code (part 2)."""
+# - Removed opponent score, we don't need to track that
+# - Implement a new method called get_desired_outcome
+# - Implement a new method called get_correct_move
 
 # Variables
 PLAYER_SCORE = 0
-OPPONENT_SCORE = 0
-
-def get_stats():
-    get_opp_stats()
-    get_player_stats()
-
-def get_opp_stats():
-    # Not used
-    print(f"The opponent score is {OPPONENT_SCORE}.")
 
 def get_player_stats():
     print(f"The player score is {PLAYER_SCORE}.")
 
+def get_desired_outcome(letter):
+    """Function that determines the desired outcome."""
+    try:
+        if letter in ("X"):
+            return "Lose"
+        elif letter in ("Y"):
+            return "Draw"
+        elif letter in ("Z"):
+            return "Win"
+    except:
+        print("Something went wrong.")
+
+def get_correct_move(opp_move, desired_outcome):
+    """Function that determines the correct move, given opponent's move and player's desired outcome."""
+
+    # Copy opponent if desired outcome is draw
+    if desired_outcome == "Draw":
+        return opp_move
+
+    # Do something else if desired outcome is something else
+    if opp_move == "Rock":
+        if desired_outcome == "Win":
+            return "Paper"
+        if desired_outcome == "Lose":
+            return "Scissors"
+    elif opp_move == "Paper":
+        if desired_outcome == "Win":
+            return "Scissors"
+        if desired_outcome == "Lose":
+            return "Rock"
+    elif opp_move == "Scissors":
+        if desired_outcome == "Win":
+            return "Rock"
+        if desired_outcome == "Lose":
+            return "Paper"
+    else:
+        print("Something went wrong.")
+
 def get_gesture(letter):
     """Function that determines the gesture"""
     try:
-        if letter in ("A", "X"):
+        if letter in ("A"):
             return "Rock"
-        elif letter in ("B", "Y"):
+        elif letter in ("B"):
             return "Paper"
-        elif letter in ("C", "Z"):
+        elif letter in ("C"):
             return "Scissors"
     except:
         print("Something went wrong.")
@@ -62,7 +94,7 @@ def get_outcome_score(outcome):
     elif outcome == "Draw":
         return 3
 
-def part1():
+def part2():
 
     global PLAYER_SCORE
 
@@ -79,22 +111,21 @@ def part1():
 
             # Translate the gestures
             current_opp_gesture = get_gesture(current_match[0])
-            current_player_gesture = get_gesture(current_match[1])
+            current_desired_outcome = get_desired_outcome(current_match[1])
+            current_best_move = get_correct_move(current_opp_gesture, current_desired_outcome)
 
             print(f"* The opponent elf: {current_opp_gesture}.")
-            print(f"* The player elf (you): {current_player_gesture}.")
-
-            # We don't actually care about the opponent's score for this puzzle
-            # OPPONENT_SCORE += get_gesture_score(current_opp_gesture)
+            print(f"* The desired outcome is {current_desired_outcome}")
+            print(f"* You play {current_best_move}")
 
             # Add gesture score
-            PLAYER_SCORE += get_gesture_score(current_player_gesture)
+            PLAYER_SCORE += get_gesture_score(current_best_move)
 
             # Check total after getting gesture score
             get_player_stats()
 
             # Determine the outcome
-            outcome = get_outcome_player(current_opp_gesture, current_player_gesture)
+            outcome = get_outcome_player(current_opp_gesture, current_best_move)
             print(f"The outcome of the match is {outcome}.")
 
             # Add outcome score
@@ -104,3 +135,5 @@ def part1():
 
             # Next match
             i += 1
+
+part2()
