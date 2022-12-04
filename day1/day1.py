@@ -6,7 +6,7 @@
 inventory = []
 
 # Let's open the file
-with open("01-CalorieCounting/puzzle_input.txt", encoding="utf-8", mode="r") as foods:
+with open("input/d1.txt", encoding="utf-8", mode="r") as foods:
 
     # Elves line up, let's take down your details!
     currentElf = []

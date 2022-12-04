@@ -4,6 +4,8 @@ This is my repo for solving the [2022 Advent of Code challenges](https://advento
 
 - Start Date: 03 December 2022
 - End Date: I don't know if I can make it 'til the end!
+- `/day1, /day2` folders correspond to the puzzles in the below checklist.
+- `/input` stores the text I received for the puzzle input.
 
 Note: I am a python n00b, so this will make my brain work.
 
