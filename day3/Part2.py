@@ -1,6 +1,6 @@
 import collections
-from Rucksack import *
-from RucksackAnalyser import *
+from Rucksack import Rucksack
+from RucksackAnalyser import get_item_priority, split
 
 # Data handling
 file = open("input/d3.txt", encoding="utf-8", mode="r")
