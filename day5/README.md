@@ -58,3 +58,5 @@ After the rearrangement procedure completes, what crate ends up on top of each s
 # What I learned
 
 - To import from another folder, do this: `from (foldername).(module) import (function)`. The real life context is pytest, `from day5.Day5 import hello`.
+- I learned that the '-' is an invalid character for import, so don't name your files something like `hello-there`.
+- I managed to fix the tests!
