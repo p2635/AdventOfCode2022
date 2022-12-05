@@ -41,11 +41,13 @@ for string in camp_pairs:
     print(f"Elf 1 has the assigned areas: {elf1}")
     print(f"Elf 2 has the assigned areas: {elf2}")
 
+    # If either party have done the counterpart's work, mark it down.
     if elf1.intersection(elf2) == elf2 or elf2.intersection(elf1) == elf1:
         print("There is overlap:")
         print(elf1.intersection(elf2))
         overlap += 1
     else:
+    # Otherwise, do nothing.
         print("There is no overlap.")
 
     # Move on to the next elf pair
