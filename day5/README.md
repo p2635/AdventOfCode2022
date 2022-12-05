@@ -57,6 +57,20 @@ After the rearrangement procedure completes, what crate ends up on top of each s
 
 # Planning it out
 
+what is the cargo table telling me? What info can I gather?
+
+- The number of stacks = 9, I know this because...
+        - I can get this information by reading the bottom line
+        - I can also get this information by counting cargo items
+- Cargo is in the format [(Capital letter)]
+- Empty cargo is in the format of 3 whitespaces.
+- The gaps between the cargo is 1 whitespace.
+
+Bonus stuff
+- Cargo stack size has no defined limit (Y axis) - I can assume this is 9 (blocks) to make things easier
+- Number of cargo stacks has no defined limit (X axis)  - I can assume this is 8 (blocks) to make things easier
+
+Other
 - I need to investigate what methods can help me here, specifically translating the cargo map to something that python understands. Something like this maybe? https://note.nkmk.me/en/python-list-transpose/
 
 # What I learned

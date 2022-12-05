@@ -38,3 +38,7 @@ with open("input/d5.txt", encoding='utf-8', mode="r") as file:
 
 # find out how many stacks there are
 # populate the stacks
+
+
+print(list(zip([0, 1, 2], [3, 4, 5])))
+# [(0, 3), (1, 4), (2, 5)]
