@@ -1,6 +1,6 @@
-####################################################
-## Day 4 - The camp cleanup event
-####################################################
+# -----------------------------------------------
+# Day 4 - The camp cleanup event
+# -----------------------------------------------
 
 elf_count = 0
 full_overlap = 0 # the full overlap count
@@ -16,9 +16,9 @@ for string in camp_pairs:
 
     elf_count += 1
 
-    ##################################################
+    # -----------------------------------------------
     # MAKING THE ELF MACHINE SCANNER WORK
-    ##################################################
+    # -----------------------------------------------
 
     # Given a string '1-4,22-49', split it to a list ['1-4', '22,49']
     elf_pair = string.split(',')
@@ -37,9 +37,9 @@ for string in camp_pairs:
     elf1 = {number for number in range(elf1[0], elf1[1] + 1)}
     elf2 = {number for number in range(elf2[0], elf2[1] + 1)}
 
-    ##################################################
+    # -----------------------------------------------
     # USING THE ELF MACHINE SCANNER
-    ##################################################
+    # -----------------------------------------------
 
     print("===== ANALYSING PAIR ======")
     print(f"Elf 1 has the assigned areas: {elf1}")

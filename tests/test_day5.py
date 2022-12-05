@@ -4,11 +4,12 @@
 # Imports
 # -----------------------------------------------
 
-from day5.Day5 import hello
+from day5.Cargo import Cargo
 
 # -----------------------------------------------
 # Tests
 # -----------------------------------------------
 
-def test_hello():
-    assert hello() == "hello"
+# def test_cargo_init():
+#     cargo = Cargo()
+#     assert hello() == "hello"
