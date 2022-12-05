@@ -55,6 +55,10 @@ The Elves just need to know which crate will end up on top of each stack; in thi
 
 After the rearrangement procedure completes, what crate ends up on top of each stack?
 
+# Planning it out
+
+- I need to investigate what methods can help me here, specifically translating the cargo map to something that python understands. Something like this maybe? https://note.nkmk.me/en/python-list-transpose/
+
 # What I learned
 
 - To import from another folder, do this: `from (foldername).(module) import (function)`. The real life context is pytest, `from day5.Day5 import hello`.
