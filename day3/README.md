@@ -33,7 +33,58 @@ In the above example, the priority of the item type that appears in both compart
 
 Find the item type that appears in both compartments of each rucksack. What is the sum of the priorities of those item types?
 
+# --- Part Two ---
+
+As you finish identifying the misplaced items, the Elves come to you with another issue.
+
+For safety, the Elves are divided into groups of three. Every Elf carries a badge that identifies their group. For efficiency, within each group of three Elves, the badge is the only item type carried by all three Elves. That is, if a group's badge is item type B, then all three Elves will have item type B somewhere in their rucksack, and at most two of the Elves will be carrying any other item type.
+
+The problem is that someone forgot to put this year's updated authenticity sticker on the badges. All of the badges need to be pulled out of the rucksacks so the new authenticity stickers can be attached.
+
+Additionally, nobody wrote down which item type corresponds to each group's badges. The only way to tell which item type is the right one is by finding the one item type that is common between all three Elves in each group.
+
+Every set of three lines in your list corresponds to a single group, but each group can have a different badge item type. So, in the above example, the first group's rucksacks are the first three lines:
+
+vJrwpWtwJgWrhcsFMMfFFhFp
+jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
+PmmdzqPrVvPwwTWBwg
+
+And the second group's rucksacks are the next three lines:
+
+wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
+ttgJtRGJQctTZtZT
+CrZsJsPPZsGzwwsLwLmpwMDw
+
+In the first group, the only item type that appears in all three rucksacks is lowercase r; this must be their badges. In the second group, their badge item type must be Z.
+
+Priorities for these items must still be found to organize the sticker attachment efforts: here, they are 18 (r) for the first group and 52 (Z) for the second group. The sum of these is 70.
+
+Find the item type that corresponds to the badges of each three-Elf group. What is the sum of the priorities of those item 
+types?
+
+# Part 2 Pseudocode
+
+- Split the whole list into a list of lists (each sublist having three items, which are the elves' rucksacks)
+- Check the common item across three rucksacks, how do we do that?
+    - This is easier if we only look at unique characters per rucksack
+    - I can do this by removing duplicates within the same rucksack
+    - Then I combine all of them together, if the count is exactly 3 then that must be the badge
+- Tally up the priority as before
+
+# What ifs
+
+- What if there is a conflict and the compartments have more than 1 duplicate character? (I didn't try to find out, but I still passed part 1. This tells me that it's not relevant)
+- What if the rucksack has an odd number of items in it? How do I slice it? (Answer: I checked and the data is all even.)
+
 # What I learned
 
-- This did not work, came up with 'No module named day3' `from day3.Sack import Sack`
-- This did not work `import Sack`. This is importing the module Sack, not the class
+- This went a lot smoother than the previous challenge, I'm a lot happier when things go my way.
+- `from day3.Sack import Sack` did not work, came up with 'No module named day3' 
+- `import Sack` did not work. This is importing the module Sack, not the class.
+- I do somewhat enjoy coding, I stayed up until 4am doing this. Shows part of me does not completely hate programming.
+
+# References
+
+- For counting repeating characters: https://stackoverflow.com/questions/991350/counting-repeated-characters-in-a-string-in-python (didn't end up using this)
+- Anonther one on counting repeating characters: https://www.8bitavenue.com/find-repeated-characters-in-python/
+- Splitting a list in even chunks: https://www.programiz.com/python-programming/examples/list-chunks

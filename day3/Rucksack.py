@@ -2,18 +2,19 @@ class Rucksack:
 
     def __init__(self, contents):
         self.contents = contents
-        self.big = 0
-        self.small = 0
         # On initialise, split the contents to compartment 1 and 2
-        self.compartment = [0, 1] # to be implemented
+        self.compartment = self.compartmentalise(contents)
 
-    def get_total_item_count(self):
-        count = self.big + self.small
-        return count
-
-    def one_more_big_item(self):
-        self.big += 1
-    
-    def one_more_small_item(self):
-        self.small += 1
+    def compartmentalise(self, contents):
+        middle = int(len(contents)/2)
+        sliced = [contents[:middle], contents[middle:]]
+        return sliced
         
+    # Find the item type that appears in both compartments of each rucksack
+    def get_common_item(self):
+        for i in self.compartment[0]:
+            try:
+                if i in self.compartment[1]:
+                    return i
+            except:
+                print("Something went wrong.")
