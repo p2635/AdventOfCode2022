@@ -5,7 +5,7 @@
 # -----------------------------------------------
 
 import pytest
-from day2.day2-part1 import *
+from day2.day2_part1 import get_gesture, get_gesture_score
 
 # -----------------------------------------------
 # Tests

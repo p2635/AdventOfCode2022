@@ -54,3 +54,7 @@ Finally, one crate is moved from stack 1 to stack 2:
 The Elves just need to know which crate will end up on top of each stack; in this example, the top crates are C in stack 1, M in stack 2, and Z in stack 3, so you should combine these together and give the Elves the message CMZ.
 
 After the rearrangement procedure completes, what crate ends up on top of each stack?
+
+# What I learned
+
+- To import from another folder, do this: `from (foldername).(module) import (function)`. The real life context is pytest, `from day5.Day5 import hello`.
