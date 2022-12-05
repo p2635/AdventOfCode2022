@@ -6,7 +6,8 @@ This is my repo for solving the [2022 Advent of Code challenges](https://advento
 - End Date: I don't know if I can make it 'til the end!
 - `/day1, /day2` folders correspond to the puzzles in the below checklist.
 - `/input` stores the text I received for the puzzle input.
-- Coded on Github Codespaces
+- `/tests` tried to write pytests but failed, I will come back to this.
+- Coded on Github Codespaces.
 
 Note: I am a python n00b, so this will make my brain work.
 
@@ -14,7 +15,7 @@ Note: I am a python n00b, so this will make my brain work.
 - [x] Day 2: Rock Paper Scissors 👊
 - [x] Day 3: Rucksack Reorganization 💰
 - [x] Day 4: Camp Cleanup 🏕️
-- [ ] Day 5
+- [ ] Day 5: Supply Stacks 
 - [ ] Day 6
 - [ ] Day 7
 - [ ] Day 8
