@@ -15,7 +15,7 @@ Note: I am a python n00b, so this will make my brain work.
 - [x] Day 2: Rock Paper Scissors 👊
 - [x] Day 3: Rucksack Reorganization 💰
 - [x] Day 4: Camp Cleanup 🏕️
-- [ ] Day 5: Supply Stacks 
+- [x] Day 5: Supply Stacks 🍫
 - [ ] Day 6
 - [ ] Day 7
 - [ ] Day 8
