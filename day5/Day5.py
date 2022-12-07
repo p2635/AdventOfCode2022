@@ -1,9 +1,5 @@
-from Cargo import Cargo
-from string import ascii_uppercase as upper
-
-# Just for testing
-def hello():
-    return "hello"
+import TextFileParser
+from CrateMover import CrateMover9k, CrateMover9k1
 
 # First thing is to get the drawing of the stacks
 # read line until you get to an empty line
@@ -16,29 +12,43 @@ with open("input/d5.txt", encoding='utf-8', mode="r") as file:
         if "1" in line:
             break
         else:
-            map.append(line)
+            map.append(line.strip("\n"))
 
-    # Put this map into a cargo object
-    cargo = Cargo(map)
+    # Put this map into Crate Mover 9000
+    parsed_map = TextFileParser.translate_map(map)
+    parsed_map2 = TextFileParser.translate_map(map)
+    instructions = []
+    cargo = CrateMover9k(parsed_map)
 
-    # Check that it still looks right
-    for line in cargo.map:
-        print(line)
+    # Start the processing
+    for line in file:
 
+        if "move" in line:
 
-    length = 0
-    # Check the stack size
-    for line in cargo.map:
-        for char in line:
-            if char in upper:
-                print(char)
-                length += 1
-    
-    print(f"The stack size is {length}")
+            # Store the 'move' instructions
+            instructions.append(line)
+            instruction = TextFileParser.parse_line_of_instruction(line)
+            cargo.moveCargo(instruction)
 
-# find out how many stacks there are
-# populate the stacks
+        cargo.showCargo()
 
+    # The answer to part 1
+    print("The answer to part 1 is hopefully")
+    cargo.showTopOfEachStack()
 
-print(list(zip([0, 1, 2], [3, 4, 5])))
-# [(0, 3), (1, 4), (2, 5)]
+    # Put this map into Crate Mover 9001
+    cargo = CrateMover9k1(parsed_map2)
+    cargo.showCargo()
+
+    # Start the processing
+    for line in instructions:
+
+        if "move" in line:
+            instruction = TextFileParser.parse_line_of_instruction(line)
+            cargo.moveCargo(instruction)
+
+        cargo.showCargo()
+
+    # The answer to part 2
+    print("The answer to part 2 is hopefully")
+    cargo.showTopOfEachStack()

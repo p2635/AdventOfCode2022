@@ -77,4 +77,66 @@ Other
 
 - To import from another folder, do this: `from (foldername).(module) import (function)`. The real life context is pytest, `from day5.Day5 import hello`.
 - I learned that the '-' is an invalid character for import, so don't name your files something like `hello-there`.
-- I managed to fix the tests!
+- I managed to fix the pytests!
+- The asterisk unpacks an iterable. If you have something like [[1,2,3], [2,3,4]] and you want to pass this into a function; you can pass it in by doing this `a = [[1,2,3], [2,3,4]]` then `zip(*a)`.
+- Repack to a list of lists, since zip returns a list of tuples https://stackoverflow.com/a/6473724
+- Extract digits with regex (part 2 of this article): https://www.askpython.com/python/string/extract-digits-from-python-string
+- Estimated time spent 10-12 hours (part 1)
+
+# Part 2
+
+--- Part Two ---
+
+As you watch the crane operator expertly rearrange the crates, you notice the process isn't following your prediction.
+
+Some mud was covering the writing on the side of the crane, and you quickly wipe it away. The crane isn't a CrateMover 9000 - it's a CrateMover 9001.
+
+The CrateMover 9001 is notable for many new and exciting features: air conditioning, leather seats, an extra cup holder, and the ability to pick up and move multiple crates at once.
+
+Again considering the example above, the crates begin in the same configuration:
+
+    [D]    
+[N] [C]    
+[Z] [M] [P]
+ 1   2   3 
+
+Moving a single crate from stack 2 to stack 1 behaves the same as before:
+
+[D]        
+[N] [C]    
+[Z] [M] [P]
+ 1   2   3 
+
+However, the action of moving three crates from stack 1 to stack 3 means that those three moved crates stay in the same order, resulting in this new configuration:
+
+        [D]
+        [N]
+    [C] [Z]
+    [M] [P]
+ 1   2   3
+
+Next, as both crates are moved from stack 2 to stack 1, they retain their order as well:
+
+        [D]
+        [N]
+[C]     [Z]
+[M]     [P]
+ 1   2   3
+
+Finally, a single crate is still moved from stack 1 to stack 2, but now it's crate C that gets moved:
+
+        [D]
+        [N]
+        [Z]
+[M] [C] [P]
+ 1   2   3
+
+In this example, the CrateMover 9001 has put the crates in a totally different order: MCD.
+
+Before the rearrangement process finishes, update your simulation so that the Elves know where they should stand to be ready to unload the final supplies. After the rearrangement procedure completes, what crate ends up on top of each stack?
+
+# What I learned
+
+- To read later, https://mathspp.com/blog/pydonts/pass-by-value-reference-and-assignment. I feel like I was messing with the same variable all along and pointers were going to the same place. Need to revise on this one. For now I will fudge it, have a look at how you implemented parsedmap1 and parsedmap2.
+- Don't forget you can combine lists by just using an addition + operator, no need to do fancy append stuff. That just complicated things.
+- reversed() returns an iterator object, not a reversed list. You still need to do something like list(reversed(x)) to get it back into the form that you wanted.
