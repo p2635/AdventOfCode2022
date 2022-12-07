@@ -16,8 +16,8 @@ Note: I am a python n00b, so this will make my brain work.
 - [x] Day 3: Rucksack Reorganization 💰
 - [x] Day 4: Camp Cleanup 🏕️
 - [x] Day 5: Supply Stacks 🍫
-- [ ] Day 6
-- [ ] Day 7
+- [ ] Day 6: Tuning Trouble
+- [ ] Day 7: No Space Left On Device
 - [ ] Day 8
 - [ ] Day 9
 - [ ] Day 10
