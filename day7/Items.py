@@ -3,8 +3,6 @@ class Item:
     def __init__(self, name, parent_folder = None):
         self.name = name
         self.parent_folder = parent_folder
-        
-        # information with directory structure? Should I just use lists of lists?
 
 class Folder(Item):
 
@@ -13,7 +11,11 @@ class Folder(Item):
         self.contents = []
 
     def get_size(self):
-        pass
+        size = 0
+        for i in self.contents:
+            print(i.name, i.getsize())
+            size += i.get_size()
+        return size
         # sum of all files, or zero if no files, recursive?
 
 class File(Item):
@@ -21,3 +23,6 @@ class File(Item):
     def __init__(self, name, parent_folder = None, size = 0):
         Item.__init__(self, name, parent_folder)
         self.size = size
+
+    def get_size(self):
+        return self.size

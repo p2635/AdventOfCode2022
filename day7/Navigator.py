@@ -1,4 +1,4 @@
-from day7.Item import File, Folder
+from Items import File, Folder
 
 class Navigator:
 
@@ -19,8 +19,8 @@ class Navigator:
             if folder.name == name:
                 return folder
 
-    def add_file(self, name):
-        new_file = File(name, self.active_folder)
+    def add_file(self, name, size):
+        new_file = File(name, self.active_folder, size)
         self.active_folder.contents.append(new_file)
 
     def add_folder(self, name):
@@ -29,3 +29,6 @@ class Navigator:
 
     def list_items(self):
         return [item.name for item in self.active_folder.contents]
+
+    def get_current_folder_size(self):
+        return self.active_folder.get_size()

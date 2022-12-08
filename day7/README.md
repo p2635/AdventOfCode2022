@@ -80,4 +80,16 @@ To begin, find all of the directories with a total size of at most 100000, then 
 Find all of the directories with a total size of at most 100000. What is the sum of the total sizes of those directories?
 
 # What I learned
+
+## Tests worked but then BROKE AGAIN!
 - Tests don't work? Did you add __init__.py to your directory? Did you set up your import statements correctly?
+- Don't put __init__.py in /tests? https://stackoverflow.com/questions/41748464/pytest-cannot-import-module-while-python-can
+- Add an empty conftest.py file in root? https://stackoverflow.com/a/63089928
+- This is the main issue I'm having, how can Navigator work but not Items?
+
+```
+    from day7.Navigator import Navigator
+day7/Navigator.py:1: in <module>
+    from Items import File, Folder
+E   ModuleNotFoundError: No module named 'Items'
+```
