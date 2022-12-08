@@ -10,7 +10,7 @@ LENGTH = 3      # Stores the cargo char length
 GAP = 1      # Stores cargo gap char length
 
 # Determines how many cargo based on one line of text
-def check_cargo_countrow(row):
+def check_cargo_count(row):
     cargo_count = (len(row) + GAP) / LENGTH
     return int(cargo_count)
 

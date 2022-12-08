@@ -5,7 +5,7 @@
 # -----------------------------------------------
 
 import pytest
-from day5.TextFileParser import CargoParser
+from day5 import TextFileParser
 
 # -----------------------------------------------
 # Fixtures - THIS DOESN'T WORK
@@ -21,8 +21,7 @@ from day5.TextFileParser import CargoParser
 
 # This test will check class variables are accessible
 def test_check_cargo_class_vars():
-    parser = CargoParser()
-    assert parser.GAP == 1 and parser.LENGTH == 3
+    assert TextFileParser.GAP == 1 and TextFileParser.LENGTH == 3
 
 # This test will take in a line and check how many stacks exist
 # based on blank spaces
@@ -32,8 +31,7 @@ row_data = [
 ]
 @pytest.mark.parametrize("row, count", row_data)
 def test_check_cargo_count(row, count):
-    parser = CargoParser()
-    assert parser.check_cargo_count(row) == count
+    assert TextFileParser.check_cargo_count(row) == count
 
 # This test will take in a line and convert it
 # to a list like ["S", "", "", "", "M" ...]
@@ -44,5 +42,4 @@ row_data = [
 ]
 @pytest.mark.parametrize("row, lst", row_data)
 def test_line_to_list(row, lst):
-    parser = CargoParser()
-    assert parser.line_to_list(row) == lst
+    assert TextFileParser.line_to_list(row) == lst
