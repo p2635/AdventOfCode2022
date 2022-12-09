@@ -42,7 +42,7 @@ navi.go_up_to_root()
 navi.update_folder_sizes()
 navi.go_up_to_root()
 
-# No idea if I have done this update process right, moving to part 1.
+## No idea if I have done this update process right, moving to part 1.
 
 ### PART 1 - FILTER AND SUM FOLDERS < 100K ELF BYTES ###
 
