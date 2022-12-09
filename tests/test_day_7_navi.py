@@ -6,6 +6,7 @@
 
 from day7.Items import Folder
 from day7.Navigator import Navigator
+from day7 import Parser
 
 # -----------------------------------------------
 # Fixtures - THIS DOESN'T WORK
@@ -19,6 +20,10 @@ from day7.Navigator import Navigator
 # -----------------------------------------------
 # Tests
 # -----------------------------------------------
+
+def test_is_file():
+    string = "24836 rsjcg.lrh"
+    assert Parser.parse_command(string)
 
 def test_many_navi_functions():
 
@@ -54,7 +59,7 @@ def test_get_file_size_three_files():
     root_folder = Folder("/")
     navi = Navigator(root_folder)
     for i in range(3):
-        navi.add_file("NewFile", 1024)
+        navi.add_file(f"NewFile{i}", 1024)
     assert navi.get_current_folder_size() == 1024 * 3
 
 def test_get_file_size_in_subfolder():
@@ -88,3 +93,21 @@ def test_get_file_size_in_subfolder2():
 
     # Assert
     assert navi.get_current_folder_size() == 2048
+
+# Not a true unit test, verify with eyes
+def test_print_current_dir_file_size():
+
+    # Arrange
+    root_folder = Folder("/")
+    navi = Navigator(root_folder)
+
+    # Act
+    navi.add_folder("Subfolder1")
+    navi.add_file("TestFile1", 1024)
+
+    navi.go_down_a_folder("Subfolder1")
+    navi.add_file("TestFile2", 1024)
+    navi.go_up_a_folder()
+
+    # Assert
+    # navi.print_size_include_subfolders()

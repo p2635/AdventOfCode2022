@@ -93,3 +93,9 @@ day7/Navigator.py:1: in <module>
     from Items import File, Folder
 E   ModuleNotFoundError: No module named 'Items'
 ```
+
+- Doing a bunch of things then just fixing basic syntax in other files fixed it.
+- Using ChatGPT really helped with something, I was banging my head against the wall.
+
+
+    
