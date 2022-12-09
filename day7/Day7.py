@@ -33,6 +33,9 @@ while i < len(commands):
 
     i += 1
 
+## CHECK THE STRUCTURE ##
+navi.print_directory_structure(navi.active_folder)
+
 ### UPDATING FOLDERS WITH THE FOLDER SIZE INFORMATION ###
 
 navi.go_up_to_root()

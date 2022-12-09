@@ -43,12 +43,21 @@ class Navigator:
     # Updates folder size attributes recursively
     def update_folder_sizes(self):
         for i in self.active_folder.contents:
-            print(f"Updating folder size for {type(i)} {i.name}")
             self.active_folder.get_size()
             if isinstance(i, Folder):
                 self.active_folder = i
                 self.update_folder_sizes()
-        print("Folder sizes updated.")
+
+    # print directory structure - credits to ChatGPT, not me
+    def print_directory_structure(self, folder, indent=0):
+        # Iterate over the folders and files in the 'contents' attribute
+        for item in folder.contents:
+            # Print the name of the item, indented by the specified amount
+            print(" " * indent + item.name)
+            # Check if the item is a folder
+            if isinstance(item, Folder):
+                # If it is a folder, recursively call the function to print its contents
+                self.print_directory_structure(item, indent + 2)
 
     # Try and add up all the 100000 bytes of folders together
     # Work in progress, I give up, spent hours. Easy to give up.
