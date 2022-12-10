@@ -53,3 +53,14 @@ print(navi.report_on_part1(navi.active_folder))
 # Failed guesses: 2915238 and others that I don't remember
 
 ### PART 2 - FILTER AND SUM FOLDERS < 100K ELF BYTES ###
+print(f">>>> It's time for part 2 <<<<")
+print(f" - Total Size of root \ is {navi.total_disk_space:,}.")
+print(f" - At the moment, we have {navi.calc_unused_space():,} free space.")
+print(f" - The update requires {navi.required_update_space:,}.")
+print(f" - Is this enough space? System: {navi.is_enough_space()}.")
+
+space_to_free_up = navi.required_update_space - navi.calc_unused_space()
+print(f" - How much do we need to free up then? System: {space_to_free_up:,}.")
+
+print(f">>>> Searching... <<<<")
+print(navi.report_on_part2(navi.root_folder))

@@ -2,23 +2,23 @@ from Items import File, Folder
 
 class Navigator:
 
-    def __init__(self, folder):
-        self.active_folder = folder
+    def __init__(self, root_folder):
+        self.active_folder = root_folder
+        self.root_folder = root_folder
         self.total_disk_space = 70000000
-        self.required_space = 30000000
+        self.required_update_space = 30000000
 
     def calc_unused_space(self):
-        self.go_up_to_root()
-        return self.total_disk_space - self.active_folder.size
+        return self.total_disk_space - self.root_folder.size
+
+    def is_enough_space(self):
+        return self.calc_unused_space() > self.required_update_space
 
     def pwd(self):
         return self.active_folder.name
 
     def go_up_to_root(self):
-        print("Currently at \ directory")
-        while self.active_folder.name != "/":
-            self.go_up_a_folder()
-        return True
+        self.active_folder = self.root_folder
 
     def go_up_a_folder(self):
         self.active_folder = self.active_folder.parent_folder
@@ -74,8 +74,7 @@ class Navigator:
 
         total_size = 0
 
-        for i in folder.contents:
-            
+        for i in folder.contents:            
             if isinstance(i, Folder):
                 if i.size <= limit and i.size > 0:
                     print(f"* This folder {i.name} has a size of {i.size}.")
@@ -84,3 +83,12 @@ class Navigator:
                 total_size += self.report_on_part1(i)
 
         return total_size
+
+    # Identify a folder that is >= a certain size limit
+    def report_on_part2(self, folder, limit = 9192532):
+
+        for i in folder.contents:            
+            if isinstance(i, Folder):
+                if i.size >= limit:
+                    print(f"Folder {i.name} has size of {i.size}")
+                    self.report_on_part2(i)

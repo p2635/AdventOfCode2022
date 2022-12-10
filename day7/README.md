@@ -119,4 +119,6 @@ E   ModuleNotFoundError: No module named 'Items'
 - There were so many times I wanted to give up. I even wanted to scrap everything and start again. I was learning to do too many things at once: classes, class attributes and methods, unit tests (fixtures, parametrized tests), recursive functions.
 - To be honest, I was at my 4th guess when I failed part 1. On the 5th guess, I got it. I have no idea how I made it, I'm surprised I got this far. I beat myself up, this is such a basic coding challenge. Just think about what programmers do everyday, it doesn't compare. I should be better.
 - If for nothing else, I believe it's useful for a tester to learn to code just for grit and perseverance. I bet my unit tests are still broken.
-- 10 December 00:58, time for part 2.
+- 10 December 00:58, time for part 2 - now done.
+- If I ever want a broken repo to come back to, this is a good one to do that. I can learn more from broken code than clean code I guess. I just prefer not to be inundated with errors. For example, I have no idea why my recursive function for part 2 ended up printing a 'None' in the logs. 
+- Renaming a symbol ended up automatically added new lines on VS code for some reason. Here was the fix: https://github.com/pappasam/jedi-language-server/issues/159#issuecomment-930394612

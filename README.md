@@ -17,7 +17,7 @@ Note: I am a python n00b, so this will make my brain work.
 - [x] Day 4: Camp Cleanup 🏕️
 - [x] Day 5: Supply Stacks 🍫
 - [x] Day 6: Tuning Trouble 🤖
-- [ ] Day 7: No Space Left On Device
+- [x] Day 7: No Space Left On Device 💾
 - [ ] Day 8
 - [ ] Day 9
 - [ ] Day 10
