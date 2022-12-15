@@ -9,7 +9,7 @@ This is my repo for solving the [2022 Advent of Code challenges](https://advento
 - `/tests` pytest files in here, I didn't write them for every challenge though.
 - Coded on Github Codespaces.
 
-Note: I am a python n00b, so this will make my brain work.
+Note: When I started this challenge, I was a python n00b so this made my brain work. I am becoming less of a noob as I progress.
 
 - [x] Day 1: Calorie Counting 🍔
 - [x] Day 2: Rock Paper Scissors 👊
