@@ -1,5 +1,8 @@
-# This challenge is about counting visible trees
-visible_trees = 0
+##############################################################################
+##
+##           Day 8 - Treetop Tree House
+##
+##############################################################################
 
 # Create 2D array
 with open("input/d8.txt", mode = "r") as file:
@@ -15,6 +18,14 @@ trees = [[int(char) for char in line] for line in lines]
 trees_x = len(trees)
 trees_y = len(trees[0])
 print(f"There are {trees_x} rows and {trees_y} columns.")
+
+##############################################################################
+##
+##           PART 1 - This challenge is about counting visible trees.
+##
+##############################################################################
+
+visible_trees = 0
 
 # If it's the first or last row/column, then those trees are visible by default
 edge_trees = 2*(trees_x + trees_y) - 4
@@ -66,3 +77,11 @@ while this_row < end_row:
     this_row += 1
 
 print(f"Total number of visible trees is {visible_trees}.")
+
+##############################################################################
+##
+##           PART 2 - This challenge is about calculating scenic score.
+##
+##############################################################################
+
+highest_scenic_score = 0
