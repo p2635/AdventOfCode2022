@@ -1,5 +1,3 @@
-test_string = "30373\n25512\n65332\n33549\n35390"
-
 # This challenge is about counting visible trees
 visible_trees = 0
 
