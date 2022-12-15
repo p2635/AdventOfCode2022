@@ -1,26 +1,28 @@
-string = "30373\n25512\n65332\n33549\n35390"
+test_string = "30373\n25512\n65332\n33549\n35390"
 
-print(string)
+# This challenge is about counting visible trees
+visible_trees = 0
 
-with open("input/d8.txt", mode = "r") as input:
-    for line in input:
-        print(line.strip())
+# Create 2D array
+with open("input/d8.txt", mode = "r") as input:    
+    file = [line.strip() for line in input]
+
+# Output data about the text file
+rows = len(file)
+columns = len(file[0])
+print(f"There are {rows} rows and {columns} columns.")
+
+# If it's the first or last row/column, then those trees are visible by default
+edge_trees = 2*(rows + columns) - 4
+visible_trees += edge_trees
+print(f"Around the edge, there are {visible_trees} visible trees.")
+
+# Indexes to start counting from (only the inside, not the edge)
+start = 1
+end_row = rows - 1
+end_column = columns - 1
 
 # Give a tree and a list of trees, determine if it is visible
-# This does not care about the ordering of the trees list
-def is_tallest(specific_tree, trees):
-
-    if trees == []:
-        # If it's an edge tree, then it's visible
-        return True
-    else:
-        # Otherwise go through every tree
-        for tree in trees:
-            if tree > specific_tree:
-                return False
-
-    # If you've gone through every tree, it must be visible
-    return True
 
 # A tree is visible if it is tallest in any direction
 # a = print(is_tallest(3, [7, 3]))
