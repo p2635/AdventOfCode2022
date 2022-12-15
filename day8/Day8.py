@@ -38,25 +38,23 @@ while this_row < end_row:
     this_tree = start
 
     # Begin the checking
+    # A tree is visible if it is tallest in ANY ONE direction (up, down, left, right)
     while this_tree < end_column:
+
+        # Keep track of the tree height
+        this_tree_height = trees[this_row][this_tree]
 
         # Get the column of trees aligned with tree to inspect
         column = [row_of_trees[this_tree] for row_of_trees in trees]
 
-        # Look up and down, which tree is the tallest?
+        # Look up. down, left, right, which tree is the tallest?
         up = max(column[:this_row])
         down = max(column[this_row + 1:trees_y])
-
-        # Look left and right, which tree is the tallest?
         left = max(trees[this_row][:this_tree])
         right = max(trees[this_row][this_tree + 1:trees_y])
-
-        # Write them down
         tallest_trees_around_me = [up, down, left, right]
 
-        # A tree is visible if it is tallest in ANY ONE direction (up, down, left, right)
-        this_tree_height = trees[this_row][this_tree]
-
+        # Compare tree height
         for tallest in tallest_trees_around_me:
             if this_tree_height > tallest:
                 # If this is true, increment visible trees count
@@ -66,7 +64,7 @@ while this_row < end_row:
         # Move on to the next tree
         this_tree += 1
 
-    # Move on to the next row of teres
+    # Move on to the next row of trees
     this_row += 1
 
 print(f"Total number of visible trees is {visible_trees}.")
