@@ -21,10 +21,6 @@ from day7 import Parser
 # Tests
 # -----------------------------------------------
 
-def test_is_file():
-    string = "24836 rsjcg.lrh"
-    assert Parser.parse_command(string)
-
 def test_many_navi_functions():
 
     root_folder = Folder("/")
