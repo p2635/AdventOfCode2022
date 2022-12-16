@@ -105,6 +105,9 @@ while cycle_set < len(x_log):
 
 # This program results in a key index error of 242, but I can fix that later. I think I got the solution!
 # Heard to read the first letter, is it a P? PZHFGJCB? (wrong) It must be R or D? It was R (ugly looking one)
+# Update: After checking out someone else's solution, I realized my is wrong, that's why the R looks ugly.
+# I will have to investigate this in more detail later.
+# 
 ###..####.#..#.####..##....##..##..###.
 ##.#....#.#..#.#....#..#....#.#..#.#..#
 ##.#...#..####.###..#.......#.#....###.
