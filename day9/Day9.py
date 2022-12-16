@@ -10,15 +10,10 @@ def initiatize_grid(rows, columns):
     # 5 [0, 0, 0, 0, 0, 0]
     #    0  1  2  3  4  5
 
-# Updates where the tail has been, not head
-def update_grid_head():
-    grid[head[0]][head[1]] = 1
-    return head
-
-# Updates where the tail has been, not head
-def update_grid_tail():
-    grid[tail[0]][tail[1]] = 1
-    return tail
+# Updates grid with specific trail of a rope
+def update_grid_with_rope_trail(rope):
+    grid[rope[0]][rope[1]] = 1
+    return rope
 
 # This does the move immediately, but the challenge requires step by step
 def move(knot, direction, steps = 1):
@@ -34,42 +29,46 @@ def move(knot, direction, steps = 1):
         return "Error"
     return f"Moved {knot} {direction} by {steps}."
 
-def tail_follows_accordingly():
+def rope_follows_accordingly(rope1, rope2):
     
-    y_diff = head[0] - tail[0]
-    x_diff = head[1] - tail[1]
+    y_diff = rope1[0] - rope2[0]
+    x_diff = rope1[1] - rope2[1]
 
-    # If head is 2 steps UDLR, move tail 1 UDLR.
+    # If rope1 is 2 steps UDLR, move rope2 1 UDLR.
     if y_diff == 0:
         if x_diff == 2:
-            move(tail, "R")
+            move(rope2, "R")
         elif x_diff == -2:
-            move(tail, "L")
+            move(rope2, "L")
     elif x_diff == 0:
         if y_diff == 2:
-            move(tail, "D")
+            move(rope2, "D")
         elif y_diff == -2:
-            move(tail, "U")
+            move(rope2, "U")
 
     # Diagonals
-    if y_diff == 2 and x_diff == 1 \
+    if y_diff == 2 and x_diff in (1, 2) \
         or y_diff == 1 and x_diff == 2:
-        move(tail, "R")
-        move(tail, "D")
-    elif y_diff == 2 and x_diff == -1 \
+        move(rope2, "R")
+        move(rope2, "D")
+    elif y_diff == 2 and x_diff in (-1, -2) \
         or y_diff == 1 and x_diff == -2:
-        move(tail, "L")
-        move(tail, "D")
-    elif y_diff == -2 and x_diff == -1 \
+        move(rope2, "L")
+        move(rope2, "D")
+    elif y_diff == -2 and x_diff in (-1, -2) \
         or y_diff == -1 and x_diff == -2:
-        move(tail, "L")
-        move(tail, "U")
-    elif y_diff == -2 and x_diff == 1 \
+        move(rope2, "L")
+        move(rope2, "U")
+    elif y_diff == -2 and x_diff in (1, 2) \
         or y_diff == -1 and x_diff == 2:
-        move(tail, "R")
-        move(tail, "U")
+        move(rope2, "R")
+        move(rope2, "U")
 
-# The Main Stuff
+##############################################################################
+##
+##           PART 1 - Head and tail rope
+##
+##############################################################################
 
 # Process the input text file
 with open("input/d9.txt", encoding="utf-8", mode="r") as file:
@@ -85,12 +84,12 @@ while i < len(commands):
 # I have no idea how big the grid should be, let's just make it big.
 grid = initiatize_grid(800, 800)
 
-# Head and tail start at the bottom left (notice the format is y, x)
+# Head and tail start in the centre (notice the format is y, x)
 head = [400, 400]
 tail = [400, 400]
-update_grid_tail() # Mark tail starting point
+update_grid_with_rope_trail(tail) # Mark tail starting point
 
-# Now let's go through the commands (finally)
+# Now let's go through the commands
 for command in commands:
 
     direction = command[0]
@@ -99,8 +98,47 @@ for command in commands:
     # Update where head should be, step by step
     for steps in range(distance):
         move(head, direction)
-        tail_follows_accordingly()
-        update_grid_tail()
+        rope_follows_accordingly(head, tail)
+        update_grid_with_rope_trail(tail)
+
+# Let's add up all the pieces
+where_tail_has_been = [number for row in grid for number in row if number != 0]
+print(sum(where_tail_has_been))
+
+##############################################################################
+##
+##           PART 2 - 10 knots
+##
+##############################################################################
+
+# Reset the playing field
+# Again, no idea how big the grid should be, let's just make it big.
+grid = initiatize_grid(800, 800)
+
+# Now we need ten knots, so 0 will be head and 9 will be tail
+knots = [[400, 400] for knot in range(10)]
+head = knots[0]
+tail = knots[9]
+update_grid_with_rope_trail(tail) # Mark tail starting point
+
+# Now let's go through the commands
+for command in commands:
+
+    direction = command[0]
+    distance = command[1]
+
+    # Update where head should be, step by step
+    for steps in range(distance):
+        move(head, direction)
+        
+        # Other knots follow
+        knot_tracker = 0
+        while knot_tracker < len(knots) - 1:
+            leading_rope = knots[knot_tracker]
+            follower = knots[knot_tracker + 1]
+            rope_follows_accordingly(leading_rope, follower)
+            update_grid_with_rope_trail(tail)
+            knot_tracker += 1
 
 # Let's add up all the pieces
 where_tail_has_been = [number for row in grid for number in row if number != 0]
