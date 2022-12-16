@@ -21,3 +21,13 @@ down R (low)
 down R (wide)
 down L (low)
 down R (wide)
+
+# What I learned
+
+* When debugging, print stuff out and see exactly where something failed. Compare the variable values.
+* Check the logic in your functions, are they missing any scenarios?
+* Don't be afraid to go and look for help, it's not a sign of weakness, you are stuck.
+* If you are overwhelmed, really go take a break, you've been staring at the screen so long.
+* Breaking it down and visualizing it helped a lot, rubber ducking your ideas.
+* Making your code more generic (i.e. creating reusable functions) saves you time down the line.
+* You can use breakpoints in VS code and watch certain vars, it helps you check what is going on.
