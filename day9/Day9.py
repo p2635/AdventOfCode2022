@@ -34,7 +34,6 @@ def move(knot, direction, steps = 1):
         return "Error"
     return f"Moved {knot} {direction} by {steps}."
 
-# SOMETHING WRONG - FIX THIS
 def tail_follows_accordingly():
     
     y_diff = head[0] - tail[0]
