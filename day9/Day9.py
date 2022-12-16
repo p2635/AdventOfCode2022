@@ -45,19 +45,22 @@ while i < len(commands):
     i += 1
 
 # I have no idea how big the grid should be, let's just make it big.
-grid = initiatize_grid(50, 50)
-show_grid()
+grid = initiatize_grid(800, 800)
 
 # Head and tail start at the bottom left (notice the format is y, x)
-head = [25, 25]
-tail = [25, 25]
+head = [400, 400]
+tail = [400, 400]
 
 # Now let's go through the commands (finally)
 for command in commands:
 
     print(f"=== {command} ===")
-
+    
     # Update where head should be
     move(head, command[0], (command[1]))
+    print(head)
+
+    # Reset grid before updating it
+    grid = initiatize_grid(800, 800)
     update_grid()
-    show_grid()
+    # show_grid()
