@@ -7,7 +7,7 @@ This is my repo for solving the [2022 Advent of Code challenges](https://advento
 - `/day1, /day2` folders correspond to the puzzles in the below checklist.
 - `/input` stores the text I received for the puzzle input.
 - `/tests` pytest files in here, I didn't write them for every challenge though.
-- Coded on Github Codespaces.
+- Coded on Github Codespaces originally, then realized there is a limited usage. Now I'm doing things locally, had to get used to fixing things and creating a virtual env.
 
 Note: When I started this challenge, I was a python n00b so this made my brain work. I am becoming less of a noob as I progress.
 
