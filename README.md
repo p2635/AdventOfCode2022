@@ -20,7 +20,7 @@ Note: When I started this challenge, I was a python n00b so this made my brain w
 - [x] Day 7: No Space Left On Device 💾
 - [x] Day 8: Treetop Tree House 🌲
 - [x] Day 9: Rope Bridge 🪢
-- [ ] Day 10: Cathode-Ray Tube
+- [x] Day 10: Cathode-Ray Tube
 - [ ] Day 11: Monkey in the Middle
 - [ ] Day 12: Hill Climbing Algorithm
 - [ ] Day 13: Distress Signal
