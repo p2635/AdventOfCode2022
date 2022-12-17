@@ -20,13 +20,13 @@ Note: When I started this challenge, I was a python n00b so this made my brain w
 - [x] Day 7: No Space Left On Device 💾
 - [x] Day 8: Treetop Tree House 🌲
 - [x] Day 9: Rope Bridge 🪢
-- [x] Day 10: Cathode-Ray Tube
-- [ ] Day 11: Monkey in the Middle
-- [ ] Day 12: Hill Climbing Algorithm
-- [ ] Day 13: Distress Signal
-- [ ] Day 14: Regolith Reservoir
-- [ ] Day 15: Beacon Exclusion Zone
-- [ ] Day 16: Proboscidea Volcanium
+- [x] Day 10: Cathode-Ray Tube 📱
+- [ ] Day 11: Monkey in the Middle 🐒
+- [ ] Day 12: Hill Climbing Algorithm ⛰️
+- [ ] Day 13: Distress Signal 🆘
+- [ ] Day 14: Regolith Reservoir 🌊
+- [ ] Day 15: Beacon Exclusion Zone 🚨
+- [ ] Day 16: Proboscidea Volcanium 🌋
 - [ ] Day 17
 - [ ] Day 18
 - [ ] Day 19
