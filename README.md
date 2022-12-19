@@ -29,7 +29,7 @@ Note: When I started this challenge, I was a python n00b so this made my brain w
 - [ ] Day 16: Proboscidea Volcanium 🌋
 - [ ] Day 17: Pyroclastic Flow
 - [ ] Day 18: Boiling Boulders
-- [ ] Day 19
+- [ ] Day 19: Not Enough Minerals
 - [ ] Day 20
 - [ ] Day 21
 - [ ] Day 22
