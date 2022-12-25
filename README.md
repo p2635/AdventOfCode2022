@@ -31,8 +31,8 @@ Note: When I started this challenge, I was a python n00b so this made my brain w
 - [ ] Day 18: Boiling Boulders
 - [ ] Day 19: Not Enough Minerals
 - [ ] Day 20: Grove Positioning System
-- [ ] Day 21
-- [ ] Day 22
-- [ ] Day 23
-- [ ] Day 24
+- [ ] Day 21: Monkey Math
+- [ ] Day 22: Monkey Map
+- [ ] Day 23: Unstable Diffusion
+- [ ] Day 24: Blizzard Basin
 - [ ] Day 25
