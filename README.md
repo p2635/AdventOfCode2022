@@ -35,4 +35,4 @@ Note: When I started this challenge, I was a python n00b so this made my brain w
 - [ ] Day 22: Monkey Map
 - [ ] Day 23: Unstable Diffusion
 - [ ] Day 24: Blizzard Basin
-- [ ] Day 25
+- [ ] Day 25: Full of Hot Air
