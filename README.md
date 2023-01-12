@@ -21,7 +21,7 @@ Note: When I started this challenge, I was a python n00b so this made my brain w
 - [x] Day 8: Treetop Tree House 🌲
 - [x] Day 9: Rope Bridge 🪢
 - [x] Day 10: Cathode-Ray Tube 📱
-- [ ] Day 11: Monkey in the Middle 🐒
+- [ ] Day 11: Monkey in the Middle 🐒 (50% complete, part 2 too hard for my skill level at this point)
 - [ ] Day 12: Hill Climbing Algorithm ⛰️
 - [ ] Day 13: Distress Signal 🆘
 - [ ] Day 14: Regolith Reservoir 🌊
